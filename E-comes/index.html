@@ -1,245 +1,199 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart</title>
-  <link rel="stylesheet" href="cart.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCart - Online Grocery Store</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-  <div class="cart-container">
-    <div class="cart-header">
-      <h2>🛒 SHOPPING CART</h2>
-      <button class="close-btn">✖</button>
-    </div>
 
-    <table class="cart-table">
-      <thead>
-        <tr>
-          <th>PRODUCT</th>
-          <th>PRICE</th>
-          <th>QTY</th>
-          <th>VAT</th>
-          <th>TOTAL</th>
-        </tr>
-      </thead>
-      <tbody>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">FreshCart</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Mega Menu</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Docs</a></li>
+            </ul>
+        </nav>
+        <input type="text" class="search-box" placeholder="Search for products...">
+        <button class="menu-toggle">&#9776;</button>
+    </header>
 
-        <!-- Product 1 -->
-        <tr>
-          <td>
-            <div class="product">
-              <img src="sev.jpg" alt="Haldiram's Sev Bhujia" width="50">
-              <span>Haldiram's Sev Bhujia</span>
+
+    <!-- Hero Section-->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="discount">Opening Sale Discount 50%</span>
+                <h1>SuperMarket Daily Fresh Grocery</h1>
+                <p>Introduced a new model for online grocery shopping and convenient home delivery.</p>
+                <a href="cart.html"><button class="shop-btn">Shop Now →</button></a>
             </div>
-          </td>
-          <td class="price">18.50</td>
-          <td>
-            <button class="qty-btn" onclick="updateQty(-1, 0)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 0)">
-            <button class="qty-btn" onclick="updateQty(1, 0)">+</button>
-          </td>
-          <td class="vat">1.85</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+            <img src="girls.png" alt="Grocery Image">
+        </div>
+    </section>
+    
 
-        <!-- Product 2 -->
-        <tr>
-          <td>
-            <div class="product">
-              <img src="bis.webp" alt="NutriChoice Digestive" width="50">
-              <span>NutriChoice Digestive</span>
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <h2>Featured Categories</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="bread.jpg" alt="Dairy">
+                <p>Dairy, Bread & Eggs</p>
             </div>
-          </td>
-          <td class="price">26.75</td>
-          <td>
-            <button class="qty-btn" onclick="updateQty(-1, 1)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 1)">
-            <button class="qty-btn" onclick="updateQty(1, 1)">+</button>
-          </td>
-          <td class="vat">2.68</td>
-          <td class="total-price">£0.00</td>
-        </tr>
-
-        <!-- Product 3 -->
-        <tr>
-          <td>
-            <div class="product">
-              <img src="5 star.webp" alt="Cadbury 5 Star Chocolate" width="50">
-              <span>Cadbury 5 Star Chocolate</span>
+            <div class="category">
+                <img src="snak.jpg" alt="Snacks">
+                <p>Snack & Munchies</p>
             </div>
-          </td>
-          <td class="price">29.99</td>
-          <td>
-            <button class="qty-btn" onclick="updateQty(-1, 2)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 2)">
-            <button class="qty-btn" onclick="updateQty(1, 2)">+</button>
-          </td>
-          <td class="vat">3.00</td>
-          <td class="total-price">£0.00</td>
-        </tr>
-
-        <!-- Product 4 -->
-        <tr>
-          <td>
-            <div class="product">
-              <img src="onion.jpg" alt="Onion Flavour Potato" width="50">
-              <span>Onion Flavour Potato</span>
+            <div class="category">
+                <img src="biscut.webp" alt="Bakery">
+                <p>Bakery & Biscuits</p>
             </div>
-          </td>
-          <td class="price">4.50</td>
-          <td>
-            <button class="qty-btn" onclick="updateQty(-1, 3)">-</button>
-            <input type="number" class="qty-input" value="0" min="0" oninput="validateQty(this, 3)">
-            <button class="qty-btn" onclick="updateQty(1, 3)">+</button>
-          </td>
-          <td class="vat">0.45</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+            <div class="category">
+                <img src="food.jpg" alt="Instant Food">
+                <p>Instant Food</p>
+            </div>
+            <div class="category">
+                <img src="tea.webp" alt="Tea">
+                <p>Tea, Coffee & Drinks</p>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section -->
+    <section class="products">
+        <h2>Popular Products</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="sev.jpg" alt="Haldiram's Sev Bhujia">
+                <h3>Haldiram's Sev Bhujia</h3>
+                <p>Snack & Munchies</p>
+            </div>
 
-        <!-- Featured Categories as Products -->
+            <div class="product-card">
+                <img src="bis.webp" alt="NutriChoice Digestive">
+                <h3>NutriChoice Digestive</h3>
+                <p>Bakery & Biscuits</p>
+            </div>
 
-        <tr>
-          <td>
-            <div class="product">
-              <img src="bread.jpg" alt="Dairy" width="50">
-              <span>Dairy, Bread & Eggs</span></div>
-          </td>
-          <td class="price">11.20</td>
-          <td><button class="qty-btn" onclick="updateQty(-1, 4)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 4)">
-            <button class="qty-btn"onclick="updateQty(1, 4)">+</button></td>
-          <td class="vat">0.56</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+            <div class="product-card">
+                <img src="5 star.webp" alt="Cadbury 5 Star Chocolate">
+                <h3>Cadbury 5 Star Chocolate</h3>
+                <p>Bakery & Biscuits</p>
+            </div>
 
-        <tr>
-          <td>
-            <div class="product">
-              <img src="snak.jpg" alt="Snacks" width="50">
-              <span>Snack & Munchies</span></div>
-          </td>
-          <td class="price">13.75</td>
-          <td><button class="qty-btn" onclick="updateQty(-1, 5)">-</button>
-            <input type="number" class="qty-input"value="0" min="1" oninput="validateQty(this, 5)">
-            <button class="qty-btn"
-              onclick="updateQty(1, 5)">+</button></td>
-          <td class="vat">0.69</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+            <div class="product-card">
+                <img src="onion.jpg" alt="Onion Flavour Potato">
+                <h3>Onion Flavour Potato</h3>
+                <p>Snack & Munchies</p>
+            </div>
 
-        <tr>
-          <td>
-            <div class="product"><img src="biscut.webp" alt="Bakery" width="50">
-              <span>Bakery & Biscuits</span></div>
-          </td>
-          <td class="price">9.80</td>
-          <td><button class="qty-btn" onclick="updateQty(-1, 6)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 6)">
-              <button class="qty-btn"onclick="updateQty(1, 6)">+</button></td>
-          <td class="vat">0.49</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="features">
+            <div class="feature">
+                <span class="icon">⏳</span>
+                <h3>10 Minute Grocery Now</h3>
+                <p>Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.</p>
+            </div>
+            <div class="feature">
+                <span class="icon">🎁</span>
+                <h3>Best Prices & Offers</h3>
+                <p>Cheaper prices than your local supermarket, great cashback offers to top it off. Get best prices & offers.</p>
+            </div>
+            <div class="feature">
+                <span class="icon">📦</span>
+                <h3>Wide Assortment</h3>
+                <p>Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg & other categories.</p>
+            </div>
+            <div class="feature">
+                <span class="icon">🔄</span>
+                <h3>Easy Returns</h3>
+                <p>Not satisfied with a product? Return it at the doorstep & get a refund within hours. No questions asked policy.</p>
+            </div>
+        </div>
 
-        <tr>
-          <td>
-            <div class="product">
-              <img src="food.jpg" alt="Instant Food" width="50">
-              <span>Instant Food</span></div>
-          </td>
-          <td class="price">15.75</td>
-          <td><button class="qty-btn" onclick="updateQty(-1, 7)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 7)">
-            <button class="qty-btn" onclick="updateQty(1, 7)">+</button>
-          </td>
-          <td class="vat">0.79</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Vegetables & Fruits</a></li>
+                    <li><a href="#">Breakfast & Instant Food</a></li>
+                    <li><a href="#">Bakery & Biscuits</a></li>
+                    <li><a href="#">Atta, Rice & Dal</a></li>
+                    <li><a href="#">Sauces & Spreads</a></li>
+                    <li><a href="#">Organic & Gourmet</a></li>
+                    <li><a href="#">Baby Care</a></li>
+                    <li><a href="#">Cleaning Essentials</a></li>
+                    <li><a href="#">Personal Care</a></li>
+                </ul>
+            </div>
 
-        <tr>
-          <td>
-            <div class="product">
-              <img src="tea.webp" alt="Tea" width="50">
-              <span>Tea, Coffee & Drinks</span></div>
-          </td>
-          <td class="price">10.25</td>
-          <td><button class="qty-btn" onclick="updateQty(-1, 8)">-</button>
-            <input type="number" class="qty-input" value="0" min="1" oninput="validateQty(this, 8)">
-            <button class="qty-btn" onclick="updateQty(1, 8)">+</button>
-          </td>
-          <td class="vat">0.51</td>
-          <td class="total-price">£0.00</td>
-        </tr>
+            <div class="footer-column">
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Our Value</a></li>
+                </ul>
+            </div>
 
-      </tbody>
+            <div class="footer-column">
+                <h4>For Consumers</h4>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Product Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shop Checkout</a></li>
+                </ul>
+            </div>
 
-      <tfoot>
-        <tr>
-          <td colspan="4" style="text-align: right;"><strong>Grand Total:</strong></td>
-          <td id="grand-total">£0.00</td>
-        </tr>
-      </tfoot>
-    </table>
+            <div class="footer-column">
+                <h4>Become a Shopper</h4>
+                <ul>
+                    <li><a href="#">Shopper Opportunities</a></li>
+                    <li><a href="#">Become a Shopper</a></li>
+                    <li><a href="#">Earnings</a></li>
+                    <li><a href="#">Ideas & Guides</a></li>
+                    <li><a href="#">New Retailers</a></li>
+                </ul>
+            </div>
 
-    <div class="cart-footer">
-      <button class="update-btn" onclick="updateAllTotals()">Update Cart</button>
-    </div>
-  </div>
+            
+        
+        </div>
+        <div class="ft">
+            <div class="payment-partners">
+                <h3>Payment Partners</h3>
+                <img src="amazon.jpg" alt="Amazon Pay">
+                <img src="paypal.jpg" alt="PayPal">
+                <img src="visa.webp" alt="Visa">
+                <img src="master.webp" alt="MasterCard">
+            </div>
+    
+            <div class="app-download">
+                <h3>Get deliveries with FreshCart</h3>
+                <img src="app store.jpg" alt="App Store">
+                <img src="google play.webp" alt="Google Play">
+            </div>
+        </div>
 
-  <script defer>
-    function validateQty(input, index) {
-      let value = parseInt(input.value);
-      if (isNaN(value) || value < 1) {
-        input.value = 1;
-      }
-      updateTotals(index);
-    }
+        <p class="copyright">&copy; 2022 - 2025 FreshCart eCommerce. All rights reserved.</p>
+    </footer>
 
-    function updateQty(change, index) {
-      const qtyInputs = document.querySelectorAll('.qty-input');
-      let input = qtyInputs[index];
-      let currentQty = parseInt(input.value) || 1;
-      currentQty += change;
-      if (currentQty < 1) currentQty = 1;
-      input.value = currentQty;
-      updateTotals(index);
-    }
-
-    function updateTotals(index) {
-      const rows = document.querySelectorAll('tbody tr');
-      const row = rows[index];
-      const price = parseFloat(row.querySelector('.price').textContent);
-      const vat = parseFloat(row.querySelector('.vat').textContent);
-      const qty = parseInt(row.querySelector('.qty-input').value);
-
-      const total = (price + vat) * qty;
-      row.querySelector('.total-price').textContent = '£' + total.toFixed(2);
-
-      updateGrandTotal();
-    }
-
-    function updateAllTotals() {
-      const qtyInputs = document.querySelectorAll('.qty-input');
-      qtyInputs.forEach((_, index) => updateTotals(index));
-      updateGrandTotal();
-    }
-
-    function updateGrandTotal() {
-      const totalCells = document.querySelectorAll('.total-price');
-      let grandTotal = 0;
-      totalCells.forEach(cell => {
-        const total = parseFloat(cell.textContent.replace('£', '')) || 0;
-        grandTotal += total;
-      });
-      document.getElementById('grand-total').textContent = '£' + grandTotal.toFixed(2);
-    }
-
-    window.onload = () => {
-      updateAllTotals();
-    };
-  </script>
-</body>
-
-</html>
+    </body>
+        </html>
